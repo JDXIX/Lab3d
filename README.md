@@ -1,2 +1,116 @@
-# Lab3d
+# Lab3D – Entornos y Programación 3D
 
+Proyecto de laboratorio desarrollado como práctica de entornos y programación 3D en Unity.
+
+---
+
+## Descripción
+
+**Lab3D** es un laboratorio interactivo de exploración en un entorno 3D abierto.
+El jugador controla a **Guardian3D**, un personaje navegable en un terreno tridimensional
+con movimiento completo, animaciones fluidas y sistema de salto.
+
+El entorno presenta una ambientación de exploración con iluminación cálida y niebla ambiental
+para generar profundidad visual.
+
+---
+
+## Personaje
+
+- **Nombre:** Guardian3D
+- **Tipo de rig:** Humanoid (Unity Animator)
+- **Controlador de animación:** Animacion.controller (Blend Tree 2D + Standing Jump)
+
+---
+
+## Controles del juego
+
+| Tecla | Acción |
+|-------|--------|
+| `W` / `↑` | Avanzar (correr hacia adelante) |
+| `S` / `↓` | Retroceder |
+| `A` / `←` | Desplazarse a la izquierda (strafe) |
+| `D` / `→` | Desplazarse a la derecha (strafe) |
+| `X` | Saltar |
+
+---
+
+## Acciones implementadas
+
+- ✅ **Quieto** – el personaje permanece en animación Idle cuando no hay entrada
+- ✅ **Correr** – movimiento hacia adelante con animación de carrera (Fast Run)
+- ✅ **Correr a la izquierda** – strafe izquierdo (Left Strafe)
+- ✅ **Correr a la derecha** – strafe derecho (mirrored Left Strafe)
+- ✅ **Saltar** – salto con física (Rigidbody + Impulse) y animación Standing Jump
+- ✅ **Caer** – caída natural por gravedad, regreso a Idle al tocar el suelo
+
+---
+
+## Estructura del proyecto
+
+```
+Assets/
+├── Animaciones/          # Animator Controller y clips .anim
+│   ├── Animacion.controller
+│   ├── Idle.anim
+│   ├── Fast Run.anim
+│   ├── Left Strafe.anim
+│   └── Standing Jump.anim
+├── Modelo/               # Modelos 3D del personaje
+│   ├── Erika Archer.fbx  (modelo base original, no eliminado)
+│   └── Ch39_nonPBR.fbx   (modelo nuevo Mixamo – Humanoid)
+├── Scripts/
+│   ├── Movimiento.cs     # Control del jugador (WASD + salto)
+│   └── SeguirCamara.cs   # Cámara que sigue al personaje
+├── Scenes/
+│   ├── SampleScene.unity         # Escena principal activa
+│   └── SampleScene_Backup.unity  # Respaldo de la escena original
+└── Textura/              # Texturas del terreno
+```
+
+---
+
+## Cómo abrir y probar en Unity
+
+1. Abrir **Unity Hub**
+2. Añadir el proyecto: seleccionar la carpeta `Lab3d/`
+3. Abrir con **Unity 6** (o la versión del proyecto)
+4. En el panel **Project**, abrir `Assets/Scenes/SampleScene`
+5. Presionar **Play** ▶
+6. Usar las teclas WASD o flechas para mover a Guardian3D
+7. Presionar **X** para saltar
+
+> **Nota:** Si se desea usar el modelo Ch39_nonPBR como personaje visual,
+> ir a `Assets/Modelo/Ch39_nonPBR.fbx` → Inspector → Rig → Animation Type: **Humanoid** → Apply.
+> Luego reemplazar el modelo visual hijo dentro del GameObject Guardian3D.
+
+---
+
+## Personalización visual aplicada
+
+- Personaje renombrado a **Guardian3D**
+- Iluminación cambiada a tono cálido (r:0.95 g:0.88 b:0.72) con intensidad reducida
+- Niebla ambiental azul activada (densidad 0.002) para mayor profundidad
+- Colores ambientales modificados (tono azul oscuro)
+- Terreno renombrado a **Terreno_Laboratorio** con tag `Terreno` asignado
+- Modelo Ch39_nonPBR.fbx configurado como Humanoid para integración futura
+- Color de fondo de cámara ajustado a azul profundo
+
+---
+
+## Mensaje de commit sugerido
+
+```
+feat: personalizacion visual Guardian3D - Lab3D Entornos y Programacion 3D
+
+- Renombrar personaje a Guardian3D
+- Iluminacion calida dramatica + niebla azul ambiental
+- Fix: tag Terreno asignado al terreno para deteccion de salto
+- Terreno renombrado a Terreno_Laboratorio
+- Ch39_nonPBR configurado como Humanoid
+- README completo con controles y estructura del proyecto
+```
+
+---
+
+*Laboratorio de Entornos y Programación 3D – Proyecto Lab3D*
