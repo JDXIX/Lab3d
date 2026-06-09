@@ -57,14 +57,12 @@ Assets/
 │   ├── Left Strafe.anim
 │   └── Standing Jump.anim
 ├── Modelo/               # Modelos 3D del personaje
-│   ├── Erika Archer.fbx  (modelo base original, no eliminado)
-│   └── Ch39_nonPBR.fbx   (modelo nuevo Mixamo – Humanoid)
+│   └── Ch39_nonPBR.fbx   (modelo  Mixamo – Humanoid)
 ├── Scripts/
 │   ├── Movimiento.cs     # Control del jugador (WASD + salto)
 │   └── SeguirCamara.cs   # Cámara que sigue al personaje
 ├── Scenes/
 │   ├── SampleScene.unity         # Escena principal activa
-│   └── SampleScene_Backup.unity  # Respaldo de la escena original
 └── Textura/              # Texturas del terreno
 ```
 
@@ -86,31 +84,5 @@ Assets/
 
 ---
 
-## Personalización visual aplicada
-
-- Personaje renombrado a **Guardian3D**
-- Iluminación cambiada a tono cálido (r:0.95 g:0.88 b:0.72) con intensidad reducida
-- Niebla ambiental azul activada (densidad 0.002) para mayor profundidad
-- Colores ambientales modificados (tono azul oscuro)
-- Terreno renombrado a **Terreno_Laboratorio** con tag `Terreno` asignado
-- Modelo Ch39_nonPBR.fbx configurado como Humanoid para integración futura
-- Color de fondo de cámara ajustado a azul profundo
-
----
-
-## Mensaje de commit sugerido
-
-```
-feat: personalizacion visual Guardian3D - Lab3D Entornos y Programacion 3D
-
-- Renombrar personaje a Guardian3D
-- Iluminacion calida dramatica + niebla azul ambiental
-- Fix: tag Terreno asignado al terreno para deteccion de salto
-- Terreno renombrado a Terreno_Laboratorio
-- Ch39_nonPBR configurado como Humanoid
-- README completo con controles y estructura del proyecto
-```
-
----
 
 *Laboratorio de Entornos y Programación 3D – Proyecto Lab3D*
